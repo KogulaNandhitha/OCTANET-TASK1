@@ -1,0 +1,181 @@
+<!doctype HTML>
+<html>
+<head>
+<style>
+body{
+  background-color: white;  
+  font-family: 'Helvetica';
+  width:100%;
+  height:100%;
+  margin:0;
+  padding: 0;
+  padding-top: 10em;
+  position: relative;
+  text-align:center;
+}
+h1{
+  color: #ffffff;
+  padding: 1em;
+}
+#openPpp{
+  text-align:center;
+  background-color: white;
+  padding: 15px 15px;
+  color: #ffffff;
+  font-weight: 500;
+  font-size: 1.5em;
+  border-radius: 3.5px;
+  text-decoration: none;
+  font-weight: 100;
+  transition:background-color 0.15s linear;
+  -webkit-transition:background-color 0.15s linear;
+  -moz-transition:background-color 0.25s linear;
+  -o-transition:background-color 0.25s linear;
+}
+a#openPpp:hover{
+  cursor: pointer;
+  
+}
+.ppp{
+  position: fixed;
+  top: -100vh;
+  left: 0;
+  z-index: 9999999;
+  background: white;
+  width: 100vw;
+  height: 100vh;
+  opacity: 0;
+
+    -webkit-transition: opacity  0.35s ease;
+    -moz-transition: opacity 0.35s ease;
+    -o-transition: opacity 0.35s ease;
+    transition: opacity 0.35s ease;
+}
+.ppp .pppContainer{
+  width: 100%;
+  max-width: 1000px;
+  position: fixed; /* To avoid scroll to target */
+  left: 30%;
+  top: -200vh;
+    -webkit-transition: top  0.35s ease;
+    -moz-transition: top 0.35s ease;
+    -o-transition: top 0.35s ease;
+    transition: top 0.35s ease;
+
+  /* Trick to properly center the element by using negative 
+  1/2 length of element as margin left and top */
+  margin-left: -250px;
+  background-color: white;
+  -webkit-box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+  -moz-box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+  box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+  border-radius: 2px;
+  z-index: 9999999; 
+}
+.ppp h2{
+  padding: 0.5em;
+  text-align: center;
+  
+  margin: 0;
+}
+.ppp img{
+  top:20px;
+ 
+  width: 30%;
+  height:100%;
+  display: block;
+}
+.ppp article{
+  height: 300px;
+  background-color:white;
+}
+/* The cancel button on popup dialog */
+.ppp a.closePpp{
+  font-family: verdana;
+  color: #e74c3c;
+  position: absolute;
+  top: 0.2em;
+  right: 0.375em;
+  margin: 0;
+  padding: 5px;
+  font-weight: bold;
+  font-size: 1.5em;
+  text-decoration: none;
+}
+/* The cancel button on popp dialog */
+.ppp a:hover{
+  color: #c0392b;
+}
+/* When popp is targeted, by clicking on link with #popp in HTML */
+.ppp:target{
+  opacity: 1;
+  top: 0;
+}
+.ppp .closePppOutSide{
+  position: absolute;
+  left:0;
+  width: 100%;
+  height: 100%;
+  z-index: 9999991; 
+}
+.ppp:target .pppContainer{
+  top: 200px;
+    -webkit-transition: top  0.35s ease;
+    -moz-transition: top 0.35s ease;
+    -o-transition: top 0.35s ease;
+    transition: top 0.35s ease;
+}
+
+@media  (max-width: 796px) {
+  .ppp .pppContainer{
+    width: 90%;
+    max-width: none;
+    left: 5%;
+    margin-left: 0;
+  }
+  .ppp ul{
+    padding: 0 1em 0 1em;
+  }
+  .ppp:target .pppContainer{
+    top: 25px;
+    -webkit-transition: top  0.35s ease;
+    -moz-transition: top 0.35s ease;
+    -o-transition: top 0.35s ease;
+    transition: top 0.35s ease;
+  }
+}
+</style>
+<body>
+ <h1>Css Modal</h1>
+  <a href="#ppp" id="openPpp"><img src="alien.jpg" width="300px" height="200px"></a>
+  
+<!-- POP UP -->
+<aside id="ppp" class="ppp">
+    <div class="pppContainer">
+       <header>
+        <a href="#!" class="closePpp">X</a>
+        
+       </header>
+      <article>
+       
+        <img src="alien.jpg" width="300px" height="200px"> 
+      </article>
+   </div>        
+   <a href="#!" class="closePppOutSide"></a>    
+</aside>
+<h1>Css Modal</h1>
+  <a href="#popUp" id="openPopUp"><img src="alien.jpg" width="300px" height="200px"></a>
+  
+<!-- POP UP -->
+<aside id="popUp" class="popp">
+    <div class="popUpContainer">
+       <header>
+        <a href="#!" class="closePopUp">X</a>
+       
+       </header>
+      <article>
+        
+      </article>
+   </div>        
+   <a href="#!" class="closePopUpOutSide"></a>    
+</aside>
